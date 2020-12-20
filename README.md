@@ -1,4 +1,4 @@
-# Todo Webased Application
+# Todo Web-based Application
 
 ### Run the App
 
