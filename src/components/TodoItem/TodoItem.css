@@ -1,0 +1,110 @@
+body {
+  --top: 0px;
+}
+
+.todo-item {
+  text-align: left;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  background: #fff;
+  border: 1px solid #dfdfdf;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.15s;
+  animation: fade-in 0.3s;
+  position: relative;
+  cursor: pointer;
+  --borderColor: #0064da;
+}
+
+.todo-item.done {
+  background: #22c55e;
+  --borderColor: #22c55e;
+  animation: fade-down 0.75s linear;
+}
+
+.todo-item.done > .todo-item-content > * {
+  text-decoration: line-through;
+  color: white;
+}
+
+.todo-item.fade-out {
+  animation: fade-out 0.3s;
+}
+
+.todo-item:hover {
+  border-color: var(--borderColor);
+  box-shadow: 0 20px 15px -5px rgba(0, 0, 0, 0.03),
+    0 10px 10px -5px rgba(0, 0, 0, 0.02);
+}
+
+.todo-item-content {
+  user-select: none;
+}
+
+.todo-item-title {
+  color: #191919;
+  line-height: 1.4;
+  word-break: break-all;
+  padding-right: 3.5rem;
+}
+
+.todo-item-date {
+  font-size: 0.75rem;
+  color: #969696;
+  margin-top: 0.35rem;
+}
+
+.todo-cancel-btn {
+  position: absolute;
+  right: 1.25rem;
+  background: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.todo-cancel-btn:hover {
+  background: #d6d6d6;
+}
+
+.todo-cancel-btn svg {
+  width: 17px;
+  height: 17px;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-down {
+  from {
+    transform: translateY(var(--top));
+  }
+  to {
+    transform: translateY(0);
+  }
+}
