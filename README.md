@@ -2,5 +2,5 @@
 
 ### Run the App
 
-- Fork this repository
+- Clone this repository
 - Run `npm start` or `yarn start`
